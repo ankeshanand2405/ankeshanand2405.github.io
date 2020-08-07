@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Responsive Navbar</title>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow: visible;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  /* Style the icon bar links */
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+  }
+  
+  /* Style the social media icons with color, if you want */
+  .icon-bar a:hover {
+    background-color: rgb(8, 181, 250);
+  }
+  
+  .facebook {
+    background: #3B5998;
+    color: white;
+    
+  }
+  
+  .instagram {
+    background: #C13584;
+    color: white;
+  }
+  
+  .google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .youtube {
+    background: #bb0000;
+    color: white;
+  }
+  .caro{
+    margin-top: 80px;
+  }
+
+.tipna{
+  display: block;
+    text-align: center;
+    padding: 16px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+
+    font-size: 8rem;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 27px;
+    -moz-border-radius:27px;
+    -webkit-border-radius:27px;
+}
+.tipna:hover {
+    background-color: #dd4b39;
+  }
+
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+header{
+    position: relative;
+    top: 0px;
+    background-color: rgb(201, 212, 219);
+    width: 100%;
+    z-index: 1000;
+}
+#contactme{
+  margin-top: 10px;
+}
+
+/* section{
+    position: relative;
+    height: calc(100vh - 3rem);
+    width: 100%; */
+    /*background: url('bg.jpg') no-repeat top center / cover;*/
+    /* overflow: visible;
+} */
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /*background-color: rgb(56, 165, 238, 0.5);*/
+}
+
+.container1{
+    max-width: 65rem;
+    padding: 0 2rem;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.logo-container1{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn{
+    flex: 3;
+    display: flex;
+}
+
+.nav-links{
+    flex: 2;
+}
+
+.log-sign{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.logo{
+    color: rgb(12, 76, 102);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+
+.logo span{
+    font-weight: 300;
+}
+
+.btn{
+    display: inline-block;
+    padding: .5rem 1.3rem;
+    font-size: .8rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+    margin: 0 .2rem;
+    transition: .3s;
+    text-transform: uppercase;
+}
+
+.btn.solid, .btn.transparent:hover{
+    background-color: rgb(252, 253, 253);
+    color: rgb(3, 85, 139);
+}
+
+.btn.transparent, .btn.solid:hover{
+    background-color: transparent;
+    color: #fff;
+}
+
+.nav-links > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link{
+    position: relative;
+}
+
+.nav-link > a{
+    line-height: 3rem;
+    color: rgb(12, 76, 102);
+    padding: 0 .8rem;
+    letter-spacing: 1px;
+    font-size: .95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+}
+
+.nav-link > a > i{
+    margin-left: .2rem;
+}
+
+.nav-link:hover > a{
+    transform: scale(1);
+}
+
+.dropdown{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 10rem;
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.dropdown ul{
+    position: relative;
+}
+
+.dropdown-link > a{
+    display: flex;
+    background-color: rgb(201, 212, 219);
+    color: rgb(12, 76, 102);
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    align-items: center;
+    justify-content: space-between;
+    transition: .3s;
+}
+
+.dropdown-link:hover > a{
+    background-color:rgb(12, 76, 102);
+    color: #fff;
+}
+
+.dropdown-link:not(:nth-last-child(2)){
+    border-bottom: 1px solid rgb(252, 253, 253);
+}
+
+.dropdown-link i{
+    transform: rotate(-90deg);
+}
+
+.arrow{
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    top: -5.5px;
+    left: 32px;
+    background-color: rgb(201, 212, 219);
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: .3s;
+    z-index: -1;
+}
+
+.dropdown-link:first-child:hover ~ .arrow{
+    background-color: rgb(3, 85, 139);
+}
+
+.dropdown-link{
+    position: relative;
+}
+
+.dropdown.second{
+    top: 0;
+    left: 100%;
+    padding-left: .8rem;
+    cursor: pointer;
+    transform: translateX(10px);
+}
+
+.dropdown.second .arrow{
+    top: 10px;
+    left: -5.5px;
+}
+
+.nav-link:hover > .dropdown,
+.dropdown-link:hover > .dropdown{
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hamburger-menu-container{
+    flex: 1;
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.hamburger-menu div{
+    width: 1.6rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1001;
+    transition: .5s;
+}
+
+.hamburger-menu div:before,
+.hamburger-menu div:after{
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgb(3, 85, 139);
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.hamburger-menu div:before{
+    transform: translateY(-7px);
+}
+
+.hamburger-menu div:after{
+    transform: translateY(7px);
+}
+
+#check{
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 90000;
+    cursor: pointer;
+    opacity: 0;
+    display: none;
+}
+
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div{
+    background-color: transparent;
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:before{
+    transform: translateY(0) rotate(-45deg);
+}
+
+#check:checked ~ .hamburger-menu-container .hamburger-menu div:after{
+    transform: translateY(0) rotate(45deg);
+}
+
+@keyframes animation{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 920px){
+    .hamburger-menu-container{
+        display: flex;
+    }
+
+    #check{
+        display: block;
+    }
+
+    .nav-btn{
+        position: fixed;
+        height: calc(100vh - 3rem);
+        top: 3rem;
+        left: 0;
+        width: 100%;
+        background-color: rgb(29, 59, 80);
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: .65s;
+    }
+
+    #check:checked ~ .nav-btn{
+        transform: translateX(0);
+    }
+
+    #check:checked ~ .nav-btn .nav-link,
+    #check:checked ~ .nav-btn .log-sign{
+        animation: animation .5s ease forwards var(--i);
+    }
+
+    .nav-links{
+        flex: initial;
+        width: 100%;
+    }
+
+    .nav-links > ul{
+        flex-direction: column;
+    }
+
+    .nav-link{
+        width: 100%;
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    .nav-link > a{
+        line-height: 1;
+        padding: 1.6rem 2rem;
+        color: #fff;
+    }
+
+    .nav-link:hover > a{
+        transform: scale(1);
+        background-color: rgb(161, 192, 211);
+        color: rgb(3, 85, 139);
+    }
+
+    .dropdown, .dropdown.second{
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        padding: 0;
+        background-color: rgb(85, 179, 250);
+        display: none;
+    }
+    
+    .nav-link:hover > .dropdown,
+    .dropdown-link:hover > .dropdown{
+        display: block;
+    }
+
+    .nav-link:hover > a > i,
+    .dropdown-link:hover > a > i{
+        transform: rotate(360deg);
+    }
+
+    .dropdown-link > a{
+        background-color: transparent;
+        color: #fff;
+        padding: 1.2rem 2rem;
+        line-height: 1;
+    }
+
+    .dropdown.second .dropdown-link > a{
+        padding: 1.2rem 2rem 1.2rem 3rem;
+    }
+
+    .dropdown.second .dropdown.second .dropdown-link > a{
+        padding: 1.2rem 2rem 1.2rem 4rem;
+    }
+
+    .dropdown-link:not(:nth-last-child(2)){
+        border-bottom: none;
+    }
+
+    .arrow{
+        z-index: 1;
+        background-color: #69bde7;
+        left: 10%;
+        transform: scale(1.1) rotate(45deg);
+        transition: .5s;
+    }
+
+    .nav-link:hover .arrow{
+        background-color: #50a9d6;
+    }
+
+    .dropdown .dropdown .arrow{
+        display: none;
+    }
+
+    .dropdown-link:hover > a{
+        background-color: #3a91bd;
+    }
+
+    .dropdown-link:first-child:hover ~ .arrow{
+        background-color: #50a9d6;
+    }
+
+    .nav-link > a > i{
+        font-size: 1.1rem;
+        transform: rotate(-90deg);
+        transition: .7s;
+    }
+
+    .dropdown i{
+        font-size: 1rem;
+        transition: .7s;
+    }
+
+    .log-sign{
+        flex: initial;
+        width: 100%;
+        padding: 1.5rem 1.9rem;
+        justify-content: flex-start;
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
+.ist{
+    width:50%;
+}
+.imh{
+              max-height:110px;
+              width:100%;
+            }
+@media (max-width: 800px){
+    .ist{
+    width:100%;
+
+}
+.aka{
+    font-size:8px;
+}
+.icon-bar{
+  width: 5px;
+    height: 5px;
+    z-index: 200000;
+}
+.imh{
+              max-height:110px;
+              width: fit-content;
+            }
+}
+
+
+        /* @media (min-width: 900px)
+        {
+            .imh{
+              max-height:110px;
+              width:100%;
+            }
+        } */
+      </style>
+</head>
+
+<body>
+    <header>
+        <div class="container1">
+            <input type="checkbox" name="" id="check">
+            
+            <div class="logo-container">
+                <h3 class="logo mt-2">Sandhan<span>Learning</span></h3>
+            </div>
+
+            <div class="nav-btn">
+                <div class="nav-links">
+                    <ul>
+                        <li class="nav-link" style="--i: .6s">
+                            <a href="#">Institute</a>
+                        </li>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#">Students<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="#">School<i class="fas fa-caret-down"></i></a>
+                                         <div class="dropdown second">
+                                           <ul>
+                                            <li class="dropdown-link">
+                                                <a href="#"><span>Below 10th</a>
+                                            </li>
+                                            <li class="dropdown-link">
+                                                <a href="#">11th & 12th</a>
+                                            </li>
+                                            <div class="arrow"></div>
+                                          </ul>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">ITI/Diploma</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Graduation<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                            <ul>
+                                                <li class="dropdown-link">
+                                                    <a href="#">General</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="boot.html" target="_blank">Engineering</a>
+                                                </li>
+                                                <div class="arrow"></div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Post-Graduation<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                        <ul>
+                                            <li class="dropdown-link">
+                                                <a href="#">MBA</a>
+                                            </li>
+                                            <div class="arrow"></div>
+                                          </ul>
+                                      </div> 
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: 1.1s">
+                            <a href="#">Parents<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="#">School</a>
+                                        <div class="dropdown second">
+                                        <ul>
+                                            <li class="dropdown-link">
+                                                <a href="#">Below 10th</a>
+                                            </li>
+                                            <li class="dropdown-link">
+                                                <a href="#">11th & 12th</a>
+                                            </li>
+                                            <div class="arrow"></div>
+                                          </ul>
+                                      </div> 
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">ITI/Diploma</a>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Graduation<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                            <ul>
+                                                <li class="dropdown-link">
+                                                    <a href="#">General</a>
+                                                </li>
+                                                <li class="dropdown-link">
+                                                    <a href="boot.html">Engineering</a>
+                                                </li>
+                                                <div class="arrow"></div>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-link">
+                                        <a href="#">Post-Graduation<i class="fas fa-caret-down"></i></a>
+                                        <div class="dropdown second">
+                                        <ul>
+                                            <li class="dropdown-link">
+                                                <a href="#">MBA</a>
+                                            </li>
+                                            <div class="arrow"></div>
+                                          </ul>
+                                      </div>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-link" style="--i: 1.35s">
+                            <a href="#">Corporate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="hamburger-menu-container">
+                <div class="hamburger-menu">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section style="margin-top: 5px;" >
+
+          <!-- Load font awesome icons -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- The social media icon bar -->
+<div class="icon-bar ">
+  <a href="https://www.facebook.com/Sandhanlearning/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://instagram.com/sandhanlearnings?igshid=6b7c45jwv052"target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="#" target="_blank" class="google"><i class="fa fa-google"></i></a>
+  <a href="https://www.linkedin.com/in/sandhan-education-056705184" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>
+</div>
+         <div class="overlay mt-3">
+            <div class="container">
+             <div class="row caro" >
+              <div class="col-12  ">
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100"  src="abdulkalam.webp" alt="First slide" style="max-height: 620px;margin-bottom: 10px;">
+                      </div>
+                      <div class="carousel-item ">
+                        <img class="d-block w-100"  src="done548.jpg" alt="Second slide" style="max-height: 620px;margin-bottom: 10px;">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="chanakya_poster.png" alt="Third slide" style="max-height: 620px;margin-bottom: 10px;">
+                      </div>
+                     
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="chanakya_junior.png" alt="fourth slide" style="max-height: 620px;margin-bottom: 10px;">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="quoteabdul.png" alt="fifth slide" style="max-height: 620px;margin-bottom: 10px;">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" style="color: crimson;" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" style="color: crimson;" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner"style="margin-top:10px;" >
+                    <div class="carousel-item active">
+                    <img class="d-block w-100" src="chanakya_poster.png" alt="First slide" style="max-height: 620px;margin-bottom: 10px;">
+                  </div>
+                  <div class="carousel-item">
+                     <img class="d-block w-100" src="chanakya_poster.png" alt="First slide" style="max-height: 620px; margin-bottom: 10px;">
+                  </div>
+                  <div class="carousel-item ">
+                    <img class="d-block w-100" src="chanakya_poster.png" alt="First slide" style="max-height: 620px; margin-bottom: 10px;">
+                  </div>
+                  <div class="carousel-item ">
+                    <img class="d-block w-100" src="chanakya_poster.png" alt="First slide" style="max-height: 620px; margin-bottom: 10px;">
+                  </div>
+              </div>
+             </div> -->
+           </div>
+       </div>
+        <div class="col-12 mt-1 aka">
+          
+            
+           <!-- <div class=" border align-text-bottom rounded text-white  font-weight-bolder mb-5 " style="background-image: url(cicl.jpg);
+            background-repeat: no-repeat;background-position: center center;background-size: cover;"> 
+            <p class="text-center  quotes m-0 p-0 ">“When learning is purposeful, creativity blossoms.</p>
+            <p class="text-center  quotes m-0 p-0 ">When creativity blossoms, thinking enmates.</p>
+            <p class="text-center  quotes m-0 p-0 ">When thinking emanates, knowledgeis fully lit.</p>
+            <p class="text-center  quotes mb-1 p-0 ">When knowledge is lit, economy flourishes."</p>
+             <p class="m-0 p-0 text-center quotes text-dark font-weight-bolder font-italic"><span class="bg-danger">Abdul 
+                kalam</span>
+            <p>
+        </div>  -->
+        <div class="absandh">
+            <div class="welcometext">
+              <div class="text-center rounded">
+                <h4 style = "line-height: 20px; font-size: xx-large;"><img src="https://img.icons8.com/color/96/000000/about-us-male--v1.png" 
+                   style='vertical-align: middle'/>About</h4>
+            </div>
+              <!-- <div class="text-center" style="display: flex;
+                       align-items: center center; ">
+                <img  width="70" height="50" 
+                src="https://img.icons8.com/color/96/000000/about-us-male--v1.png"/>
+                <span style="font-size: 1.8rem; ;">About</span>
+            </div> -->
+            <h1 class="sandhan text-center rounded " style="font-family: 'Concert One', cursive; font-weight: 800; color: rgb(29, 48, 83); " class="first"> Sandhan Learning</h1><br>
+            <p class="alumnus text-center text-secondary p-0 mb-0">A.P.J. Abdul Kalam's name is famous in the whole world. His contribution as a scientist and as a president can't be compared. He helped in the development of Agni and 
+                Prithvi missiles. Let us read more about A.P.J. Abdul Kalam's early life, family, works, 
+                books, etc. A.P.J. Abdul Kalam's name is famous in the whole world. His contribution as a scientist and as a president can't be compared. He helped in the development of Agni and 
+                Prithvi missiles. Let us read more about A.P.J. Abdul Kalam's early life, family, works, 
+                books, etc.A.P.J. Abdul Kalam's name is famous in the whole world. His contribution as a scientist and as a president can't be compared. He helped in the development of Agni and 
+                Prithvi missiles. Let us read more about A.P.J. Abdul Kalam's early life, family, works, 
+                books, etc.</p>
+          </div>
+          <div class="butttons text-center mt-5 mb-5">
+            <a class="btn tipna" style="color: cornsilk;background-color: rgb(42, 165, 155);" href="#about" role="button">About Us</a> 
+            <a class="btn tipna" style="color: cornsilk;background-color: rgb(42, 165, 155);" href="#" role="button">Career</a> 
+            <a class="btn tipna" style="color: cornsilk;background-color: rgb(42, 165, 155);" href="#contactme" role="button">Contact Us</a> 
+            
+          </div>
+      </div>
+    </div>
+    <section id="about"  rounded style="border:2px solid #ddd; /* add border to the buttons */
+    box-shadow: 0 3px 3px #999;" >
+
+        <div class="container">
+          <div style="text-align: center;">
+            <img class="img-fluid imh rounded" src="aboutus1.png">
+          </div>
+          <hr class="w-25 mx-auto">
+          <p class=" pt-2 "  style="color: black ;">
+            As the name “Sandhan” describes about itself “preparing an arrow to hit its target”. 
+            Similarly at Sandhan we not only train students, we help them to achieve their career
+             goals by providing absolute information, true knowledge, refined skills and available 
+             resources under-mentorship of industry experts, as we have found that industry experts
+              are the true bearer of absolute knowledge and information. </p>
+             <p style="color:black;"> We at Sandhan have a strong team of highly motivated professionals who already have 
+              achieved their career goals and are/were in high value positions with tremendous
+               experience and hence have special skills and approach in their teaching.</p>
+          </p>
+        </div>
+        <div class="container pt-4" >
+          <div style="text-align: center;">
+            <img class="img-fluid imh rounded" src="vision1.png">
+          </div>
+          <hr class="w-25 mx-auto">
+          <p class=" pt-2" style="color:black;">
+            A Complete education means when someone knows how to utilize one’s mind, skills, thoughts,
+             learnings and dreams in a systematic manner so that he/she would not be worried about 
+             unemployment and uncertainty of life & Career. In our flagship program we create a learning
+              environment where every individual develops professionally, psychologically, 
+              economically and will be a valuable asset to the organization, society and the Nation.
+    
+          </p>
+        </div>
+        <div class="container pt-4" >
+          <div style="text-align: center;">
+            <img class="img-fluid imh rounded" src="who2.png">
+          </div>
+          <hr class="w-25 mx-auto">
+          <p class=" pt-2" style="color:black;">
+            We Strongly believe that the most important thing in life is proper guidance which
+             should come from a reliable source. 
+    
+          <p style="color:black;">At Sandhan we have coaches who are working or worked as HR Managers, Ex- Defense Officers,
+             R&D Specialist, Research scientists, Training managers, Operation managers, Business Head,
+              Entrepreneurs, Automobile experts, public administrators and had held or are holding higher
+               positions in reputed organizations. Many of us are IIT and IIM alumnus.
+          </p>
+    
+    
+          </p>
+        </div>
+        
+      </section>  
+      <!-- contact -->
+      <section id="contactme" >
+    
+
+        <!-- Footer -->
+    <footer class="page-footer font-small bg-secondary pt-4 foothai rounded">
+      <div class="container-fluid">
+        <h2 class="text-center text-capitalize font-weight-bold">Contact Us</h2>
+        <hr class="w-25 mx-auto">
+        </div>
+    
+      <!-- Footer Links -->
+      <div class="container text-center text-md-left">
+    
+        <!-- Footer links -->
+        <div class="row text-center text-md-left mt-3 pb-3">
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 mb-10">
+            <h6 class=" mb-4 font-weight-bold text-info">SandhanLearning</h6>
+            <p class="text-white">We Strongly believe that the most important thing in life is proper
+               guidance which should come from a reliable source. 
+     
+            </p>
+          </div>
+          <!-- Grid column -->
+    
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto ">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a href="chanakya.html">Chanakya</a>
+            </p>
+            <p>
+              <a href="chanakyajunior.html">chanakyajunior</a>
+            </p>
+            <p>
+              <a href="chanakyakid.html">chanakyakid</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+    
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+            <p>
+              <a href="#about">About Us</a>
+            </p>
+            <p>
+              <a href="#courses">Courses</a>
+            </p>
+            <p>
+              <a href="#home">Home</a>
+            </p>
+            <p>
+              <a href="#googlelink">Help</a>
+            </p>
+          </div>
+    
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none">
+    
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p>
+              <i class="fas fa-home mr-3"></i> Sandhan Learnings, Flat No 304, Arcon Heights, Gothapatna, BBSR
+            </p>
+            <p>
+              <i class="fas fa-envelope mr-3"></i>Education.sandhan@gmail.com</p>
+            <p>
+              <i class="fas fa-phone mr-3"></i> +917978349894</p>
+            <p>
+              <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+    
+        </div>
+        <!-- Footer links -->
+    
+        <hr>
+    
+        <!-- Grid row -->
+        <div class="row d-flex align-items-center">
+    
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8">
+    
+            <!--Copyright-->
+            <p class="text-center text-md-left">© 2020 Copyright:
+              <a href="https://mdbootstrap.com/">
+                <strong> sandhanlearning.com</strong>
+              </a>
+            </p>
+    
+          </div>
+          <!-- Grid column -->
+    
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0">
+    
+            <!-- Social buttons -->
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-google-plus-g"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+          </div>
+          <!-- Grid column -->
+    
+        </div>
+        <!-- Grid row -->
+    
+      </div>
+      <!-- Footer Links -->
+    
+    </footer>
+    <!-- Footer -->
+        
+      </section>
+        
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
